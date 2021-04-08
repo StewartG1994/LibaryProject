@@ -17,6 +17,8 @@ input[type=text] {
 
   }
 
+
+
 input[type=button]{
     width: 80%;
     border: none;
@@ -25,6 +27,13 @@ input[type=button]{
     font-family: 'Montserrat', sans-serif;
     color:white;
    
+}
+
+.readornot{
+    padding:20px;
+    background-color:#444054;
+    font-family: 'Montserrat', sans-serif;
+    color:white;
 }
 
 .sidebar {
