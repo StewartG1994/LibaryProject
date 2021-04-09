@@ -3,8 +3,6 @@ const bookList = document.querySelector('.center');
 const bookReadBtn = document.querySelector('.read');
 const bookNotReadBtn = document.querySelector('.unread');
 
-
-
 let myLibary = [];
 
 function book(title, author, pages,read) {
@@ -13,8 +11,11 @@ function book(title, author, pages,read) {
     this.pages = pages
     this.read = read
     }
-    
 
+
+book.prototype.toggle = function (){
+    
+}
 
 function isBookRead(){
     let readOrNot ;
@@ -27,6 +28,36 @@ function isBookRead(){
         readOrNot = bookNotReadBtn.value
     }
  return readOrNot;
+}
+
+
+function stopDef(){
+   
+    const title = document.querySelector('.title');
+    const author = document.querySelector('.author');
+    const pages = document.querySelector('.pages');
+    console.log(title)
+    
+    title.addEventListener('click', event => {
+    title.value = " " ;
+    })
+
+    author.addEventListener('click', event => {
+        author.value = " " ;
+        })
+        pages.addEventListener('click', event => {
+            pages.value = " " ;
+            })
+}
+stopDef()
+
+function rtnDefault (){
+    const title = document.querySelector('.title');
+    const author = document.querySelector('.author');
+    const pages = document.querySelector('.pages');
+    pages.value = ' Enter Pages';
+    title.value = 'Enter Title';
+    author.value = 'Enter Author';
 }
 
 
@@ -54,15 +85,26 @@ const newCard = document.createElement('div')
 const deleteBtn = document.createElement('button');
 const bookTitle = document.createElement('h3');
 const bookInfo = document.createElement('p');
+const readBtn = document.createElement('button');
+
 bookInfo.textContent = 'This book was written by ' + author + ' and has '+ pages + ' pages';
 bookTitle.textContent = title;
 deleteBtn.textContent = 'Delete Book';
+readBtn.textContent = read;
+
 newCard.classList.add('card');
+readBtn.classList.add('button')
 bookList.appendChild(newCard);
 newCard.appendChild(bookTitle)
 newCard.appendChild(bookInfo);
 newCard.appendChild(deleteBtn);
+newCard.appendChild(readBtn);
+deleteBtn.classList.add('deletebtn');
 console.log(read)
+console.log(readBtn)
+
+rtnDefault ()
+
 
 
 deleteBtn.addEventListener('click', event =>{
@@ -73,6 +115,7 @@ deleteBtn.addEventListener('click', event =>{
 console.log(newCard);
 
 addBookToLibary(newBookTitle);
+console.log(myLibary);
 
 
 })
