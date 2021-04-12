@@ -12,32 +12,17 @@ function book(title, author, pages,read) {
     this.read = read
     }
 
-book.prototype.toggle = function(btnClick) {
-    
-    btnClick.addEventListener('click', event =>
+
+
+function readBtnToggle(readBtn){
+
+    readBtn.addEventListener('click', event =>
     {
-        const currentValue = event.target.textContent
-
-    
-        if ( currentValue == 'Read') { this.read = 'Unread'}
-    
-        else if ( currentValue =='Unread') { this.read = 'Read'}
-    
-    })}
-
-
-
-
-function readBtnToggle(btnClick){
-
-    btnClick.addEventListener('click', event =>
-    {
-        const currentValue = event.target.textContent
+        const currentValue = event.target.textContent;
         console.log(currentValue);
     
-        if ( currentValue == 'Read') { btnClick.textContent = 'Unread'}
-    
-        else if ( currentValue =='Unread') { btnClick.textContent = 'Read'}
+       if ( currentValue == 'Read') { readBtn.textContent = 'Unread'}
+       else if ( currentValue =='Unread') { readBtn.textContent = 'Read'}
     
     })}
 
@@ -125,8 +110,7 @@ newCard.appendChild(readBtn);
 deleteBtn.classList.add('deletebtn');
 
 rtnDefault ()
-newBook.toggle(readBtn);
-readBtnToggle(readBtn)
+readBtnToggle(readBtn);
 
 deleteBtn.addEventListener('click', event =>{
     const cardDelete = event.target.parentElement;
@@ -138,4 +122,3 @@ console.log(myLibary);
 
 
 })
-
