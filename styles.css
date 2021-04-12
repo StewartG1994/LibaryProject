@@ -39,6 +39,7 @@ input[type=radio]{
 
 .readornot{
     padding:20px;
+    margin-left: 200px;
     background-color:#444054;
     font-family: 'Montserrat', sans-serif;
     color:white;

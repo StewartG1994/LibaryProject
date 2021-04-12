@@ -12,10 +12,34 @@ function book(title, author, pages,read) {
     this.read = read
     }
 
-
-book.prototype.toggle = function (){
+book.prototype.toggle = function(btnClick) {
     
-}
+    btnClick.addEventListener('click', event =>
+    {
+        const currentValue = event.target.textContent
+
+    
+        if ( currentValue == 'Read') { this.read = 'Unread'}
+    
+        else if ( currentValue =='Unread') { this.read = 'Read'}
+    
+    })}
+
+
+
+
+function readBtnToggle(btnClick){
+
+    btnClick.addEventListener('click', event =>
+    {
+        const currentValue = event.target.textContent
+        console.log(currentValue);
+    
+        if ( currentValue == 'Read') { btnClick.textContent = 'Unread'}
+    
+        else if ( currentValue =='Unread') { btnClick.textContent = 'Read'}
+    
+    })}
 
 function isBookRead(){
     let readOrNot ;
@@ -33,21 +57,20 @@ function isBookRead(){
 
 function stopDef(){
    
-    const title = document.querySelector('.title');
-    const author = document.querySelector('.author');
-    const pages = document.querySelector('.pages');
-    console.log(title)
-    
-    title.addEventListener('click', event => {
-    title.value = " " ;
-    })
+const title = document.querySelector('.title');
+const author = document.querySelector('.author');
+const pages = document.querySelector('.pages');
 
-    author.addEventListener('click', event => {
-        author.value = " " ;
-        })
-        pages.addEventListener('click', event => {
-            pages.value = " " ;
-            })
+title.addEventListener('click', event => {
+title.value = " " ;
+ })
+
+author.addEventListener('click', event => {
+author.value = " " ;
+})
+pages.addEventListener('click', event => {
+pages.value = " " ;
+})
 }
 stopDef()
 
@@ -55,7 +78,7 @@ function rtnDefault (){
     const title = document.querySelector('.title');
     const author = document.querySelector('.author');
     const pages = document.querySelector('.pages');
-    pages.value = ' Enter Pages';
+    pages.value = 'Enter Pages';
     title.value = 'Enter Title';
     author.value = 'Enter Author';
 }
@@ -76,10 +99,10 @@ submitButton.addEventListener('click', event =>{
 const newBook = new book(title,author,pages,read);
 const newBookTitle = title + " " + author + " "+ pages+ " " + read;
 
+
+
 bookReadBtn.checked = false;
 bookNotReadBtn.checked = false;
-
-
 
 const newCard = document.createElement('div')
 const deleteBtn = document.createElement('button');
@@ -100,22 +123,19 @@ newCard.appendChild(bookInfo);
 newCard.appendChild(deleteBtn);
 newCard.appendChild(readBtn);
 deleteBtn.classList.add('deletebtn');
-console.log(read)
-console.log(readBtn)
 
 rtnDefault ()
-
-
+newBook.toggle(readBtn);
+readBtnToggle(readBtn)
 
 deleteBtn.addEventListener('click', event =>{
     const cardDelete = event.target.parentElement;
     bookList.removeChild(cardDelete);
 })
 
-console.log(newCard);
-
 addBookToLibary(newBookTitle);
 console.log(myLibary);
 
 
 })
+
