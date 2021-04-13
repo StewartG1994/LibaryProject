@@ -3,7 +3,7 @@ const submitButton = document.querySelector('.submit');
 const bookReadBtn = document.querySelector('.read');
 submitButton.addEventListener('click', addBookToLibary)
 
-let myLibary = [];
+const myLibary = ['test', 'yee', 'oke'];
 
 
 function stopDef(){
@@ -54,15 +54,19 @@ function addBookToLibary (){
     const newBook = new book (title,author,pages,read)
     myLibary.push(newBook);
     rtnDefault()
+    display()
     bookReadBtn.checked = false;
 
 }
 
 function display (){
     
-    const array = myLibary
-    const arrayLength = array.length;
-    for (var i = 0; i < arrayLength; i++) {
-        populate(myLibary[i]);
 
-    }}
+    for (let i = 0; i< myLibary.length; i++)
+    {
+    console.log(myLibary[i])
+    }
+    
+}
+
+display()
