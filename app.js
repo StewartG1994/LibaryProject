@@ -3,7 +3,8 @@ const submitButton = document.querySelector('.submit');
 const bookReadBtn = document.querySelector('.read');
 submitButton.addEventListener('click', addBookToLibary)
 
-const myLibary = ['test', 'yee', 'oke'];
+const myLibary = [];
+
 
 
 function stopDef(){
@@ -64,9 +65,45 @@ function display (){
 
     for (let i = 0; i< myLibary.length; i++)
     {
-    console.log(myLibary[i])
+    populate(myLibary[i])
     }
-    
+
 }
 
-display()
+
+console.log(myLibary)
+
+
+
+function populate(book){
+
+const bookList = document.querySelector('.center')
+const newCard = document.createElement('div');
+const bookTitle = document.createElement('h3');
+const bookInfo = document.createElement('p');
+const readOrNot = document.createElement('button');
+bookList.appendChild(newCard);
+
+
+bookTitle.textContent = book.title;
+newCard.appendChild(bookTitle)
+
+bookInfo.textContent ='Written by ' + book.author + ' with ' + book.pages + 'pages';
+newCard.appendChild(bookInfo);
+
+
+if(book.read === false ){ readOrNot.textContent = 'Not Read'}
+else {readOrNot.textContent = 'Read'};
+newCard.appendChild(readOrNot);
+
+
+newCard.classList.add('card');
+
+
+
+
+
+
+ 
+
+}
