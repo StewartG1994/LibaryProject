@@ -5,7 +5,13 @@ submitButton.addEventListener('click', addBookToLibary)
 
 const myLibary = [];
 
+function preventMultiple(){
+    const center = document.querySelector('.center');
+    const cards = document.querySelectorAll('.card');
+    console.log(cards, center)
 
+    cards.forEach(cards => center.removeChild(cards));
+}
 
 function stopDef(){
    
@@ -61,21 +67,20 @@ function addBookToLibary (){
 }
 
 function display (){
-    
 
-    for (let i = 0; i< myLibary.length; i++)
+    preventMultiple()
+
+    for (let i = 0; i < myLibary.length; i++)
     {
     populate(myLibary[i])
     }
 
 }
 
-
 console.log(myLibary)
 
-
-
 function populate(book){
+
 
 const bookList = document.querySelector('.center')
 const newCard = document.createElement('div');
@@ -88,7 +93,7 @@ bookList.appendChild(newCard);
 bookTitle.textContent = book.title;
 newCard.appendChild(bookTitle)
 
-bookInfo.textContent ='Written by ' + book.author + ' with ' + book.pages + 'pages';
+bookInfo.textContent ='Written by ' + book.author + ' with ' + book.pages + ' pages';
 newCard.appendChild(bookInfo);
 
 
@@ -100,8 +105,8 @@ newCard.appendChild(readOrNot);
 newCard.classList.add('card');
 
 
-
-
+console.log(newCard)
+console.log(bookList)
 
 
  
