@@ -87,8 +87,8 @@ const newCard = document.createElement('div');
 const bookTitle = document.createElement('h3');
 const bookInfo = document.createElement('p');
 const readOrNot = document.createElement('button');
+const deleteBtn = document.createElement('button');
 bookList.appendChild(newCard);
-
 
 bookTitle.textContent = book.title;
 newCard.appendChild(bookTitle)
@@ -101,8 +101,16 @@ if(book.read === false ){ readOrNot.textContent = 'Not Read'}
 else {readOrNot.textContent = 'Read'};
 newCard.appendChild(readOrNot);
 
-
 newCard.classList.add('card');
+newCard.appendChild(deleteBtn)
+
+deleteBtn.textContent = 'Delete Book';
+deleteBtn.classList.add('deletebtn');
+deleteBtn.addEventListener('click', event =>{
+    const cardDelete = event.target.parentElement;
+    bookList.removeChild(cardDelete);
+})
+
 
 
 console.log(newCard)
