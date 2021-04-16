@@ -9,7 +9,6 @@ function preventMultiple(){
     const center = document.querySelector('.center');
     const cards = document.querySelectorAll('.card');
     console.log(cards, center)
-
     cards.forEach(cards => center.removeChild(cards));
 }
 
@@ -50,6 +49,9 @@ function book(title, author, pages,read) {
     this.read = read 
     }
 
+book.prototype.toggle = function (){ 
+    this.read = !this.read;
+}
 
 function addBookToLibary (){
 
@@ -63,7 +65,6 @@ function addBookToLibary (){
     rtnDefault()
     display()
     bookReadBtn.checked = false;
-
 }
 
 function display (){
@@ -74,13 +75,9 @@ function display (){
     {
     populate(myLibary[i])
     }
-
 }
 
-console.log(myLibary)
-
 function populate(book){
-
 
 const bookList = document.querySelector('.center')
 const newCard = document.createElement('div');
@@ -96,7 +93,6 @@ newCard.appendChild(bookTitle)
 bookInfo.textContent ='Written by ' + book.author + ' with ' + book.pages + ' pages';
 newCard.appendChild(bookInfo);
 
-
 if(book.read === false ){ readOrNot.textContent = 'Not Read'}
 else {readOrNot.textContent = 'Read'};
 newCard.appendChild(readOrNot);
@@ -111,12 +107,13 @@ deleteBtn.addEventListener('click', event =>{
     bookList.removeChild(cardDelete);
 })
 
+readOrNot.addEventListener('click', event =>{
 
+    if (book.read === true)
+    {
+        readOrNot.textContent = 'Unread'
+    }
+    else if (book.read === false){readOrNot.textContent = 'Read'}
+    book.toggle()
 
-console.log(newCard)
-console.log(bookList)
-
-
- 
-
-}
+})}
