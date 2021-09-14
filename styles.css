@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.topBar{
+    
+    padding: 10px;
+    color: #F9F8F8;
+    background-color:#272838;
+    height :50px;
+    text-align: center;
+}
+
+.bookData{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:25px;
+    background-color: #7E7F9A;
+    color: #F9F8F8;
+}
+
+::placeholder{
+    color: #F9F8F8;
+}
+
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    border:none;
+    border-bottom : 2px solid #272838;
+    background-color: #7E7F9A;
+    color: #F9F8F8;
+    outline: none;
+
+  }
+
+  input[type =submit]{
+    padding: 12px 20px;
+    margin: 8px 0;
+  }
