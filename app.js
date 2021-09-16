@@ -1,5 +1,6 @@
 const submit = document.querySelector('.submit');
 const cardContainer = document.querySelector('.cardContainer')
+let read = document.querySelector('.read');
 
 
 let bookArray = [];
@@ -12,20 +13,35 @@ function book (title, author,read,pages){
     this.pages = pages
 }
 
+book.prototype.toggleStatus = function (){
+    if (this.read = 'Read'){
+        this.read = 'UnRead'
+    }
+
+    else {this.read = 'Read'}
+    renderBook()
+}
+
 submit.addEventListener('click', addBookToLibary)
 
 function addBookToLibary(){
+
     const title =document.querySelector('.title').value;
     const author = document.querySelector('.author').value;
     const pages = document.querySelector('.pages').value
-    const read = document.querySelector('.read').value;
+
+    if (document.querySelector('.read').checked){
+        read = 'Read'
+    }
+    else {read ='UnRead' }
+
     let newBook = new book (title, author, read, pages)
     bookArray.push(newBook);
 
     document.querySelector('.title').value = ''
     document.querySelector('.author').value = ''
     document.querySelector('.pages').value = ''
-    document.querySelector('.read').value = ''
+    document.querySelector('.read').checked = ''
     renderBook()
 }
 
@@ -39,6 +55,9 @@ function renderBook(){
     let pages = document.createElement('p')
     let read = document.createElement('p')
     let deleteBtn = document.createElement('button');
+    let readBtn = document.createElement('readBtn');
+    readBtn.classList.add('deleteBtn');
+    readBtn.textContent = 'Change Read Status';
     deleteBtn.classList.add('deleteBtn');
     deleteBtn.textContent = 'Delete Book';
 
@@ -49,6 +68,8 @@ function renderBook(){
     let authorVal = item.author;
     let  pagesVal = item.pages;
     let readVal = item.read;
+ 
+
 
     title.textContent = titleVal;
     author.textContent = 'Written by ' + authorVal;
@@ -59,6 +80,7 @@ function renderBook(){
     card.appendChild(pages);
     card.appendChild(read);
     card.appendChild(deleteBtn)
+    card.appendChild(readBtn)
     cardContainer.appendChild(card)
 
 

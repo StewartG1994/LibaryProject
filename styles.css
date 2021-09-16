@@ -57,7 +57,7 @@ input[type=text] {
       display: grid;
       text-align: center;
       justify-content: center;
-      grid-template-rows: repeat(5, 1fr);
+      grid-template-rows: repeat(6, 1fr);
       margin: 20px;
       padding: 20px;
       border-radius: 5px;
@@ -74,8 +74,34 @@ input[type=text] {
         padding :5px;
         color: #F9F8F8;
         border-radius: 10px;
+  
     }
 
     .deleteBtn:hover{
         transform: scale(1.05);
     }
+
+
+  
+  input:checked + .slider {
+    background-color: green;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
