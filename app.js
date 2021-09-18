@@ -77,6 +77,7 @@ function renderBook(){
     let  pagesVal = item.pages;
     let readVal = item.read;
 
+
     title.textContent = titleVal;
     author.textContent = 'Written by ' + authorVal;
     pages.textContent = 'This book has ' + pagesVal + ' pages';
