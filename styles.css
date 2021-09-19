@@ -6,14 +6,12 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #393E46;
 }
-.topBar{
-    
-    padding: 10px;
-    color: #F9F8F8;
-    background-color:#272838;
-    height :50px;
-    text-align: center;
+
+button{
+    background: none;
+
 }
 
 .bookData{
@@ -22,7 +20,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     padding:25px;
-    background-color: #7E7F9A;
+    background-color: #222831;
     color: #F9F8F8;
 }
 
@@ -35,15 +33,17 @@ input[type=text] {
     margin: 8px 0;
     border:none;
     border-bottom : 2px solid #272838;
-    background-color: #7E7F9A;
+    background-color: #393E46;
     color: #F9F8F8;
     outline: none;
+    border-radius: 4px;
 
   }
 
   input[type =submit]{
     padding: 12px 20px;
     margin: 8px 0;
+    
   }
 
   .cardContainer{
@@ -51,6 +51,8 @@ input[type=text] {
       justify-content: space-evenly;
       align-items: center;
       flex-wrap: wrap;
+  
+
   }
 
   .cardStyle{
@@ -75,6 +77,7 @@ input[type=text] {
       linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
      linear-gradient(#eee .1em, transparent .1em);
       background-size: 100% 1.2em;
+
       
     }
 
@@ -94,9 +97,11 @@ input[type=text] {
         border-radius: 10px;
     }
     .deleteBtn:hover{
-        transform: scale(1.05);
+        color: #7E7F9A;
+        border : 2px solid #7E7F9A;
     }
 
     .readBtn:hover{
-        transform : scale(1.05)
+        color: #7E7F9A;
+        border : 2px solid #7E7F9A;
     }

@@ -54,7 +54,7 @@ function renderBook(){
     let pages = document.createElement('p')
     let read = document.createElement('p')
     let deleteBtn = document.createElement('button');
-    let readBtn = document.createElement('readBtn');
+    let readBtn = document.createElement('button');
     read.classList.add('.readP')
 
     readBtn.classList.add('readBtn');
@@ -77,11 +77,15 @@ function renderBook(){
     let  pagesVal = item.pages;
     let readVal = item.read;
 
+    let readIt = '';
+    if (readVal === true){readIt = 'Book Read'}
+    else if (readVal === false){readIt = 'Not Read'}
+
 
     title.textContent = titleVal;
     author.textContent = 'Written by ' + authorVal;
     pages.textContent = 'This book has ' + pagesVal + ' pages';
-    read.textContent= 'Read? ' + readVal ;
+    read.textContent= readIt ;
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(pages);
