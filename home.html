@@ -1,47 +1,31 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <form action="">
+        <input type="text" id ='title' placeholder="title" required>
+        <input type="number" id='pages' placeholder="pages" required>
+        <input type="text" id='author'placeholder="author" required>
+        <input type="text" id='read' placeholder="read" required>
+        <button type="submit" id="submit" class="submit">Submit</button>
+    </form>
+    </div>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div class ='container'>
+    <div class="content">
 
+    </div>
+    
 
-<div class= 'bookData'>
-    <p>Enter your books details</p>
-    <input type="text" class="title" placeholder="Book title" name="title" required minlength="1" maxlength="20">
-    <input type="text" class="author" placeholder="Book author" name="author" required minlength="1" maxlength="20">
-    <input type="text" class="pages" placeholder="Book Pages" name="pages" required minlength="1" maxlength="5">
-    <p>Have you read the book? </p>
-        
-        <input type="checkbox" class='read'>
-
-    <input type="submit" class ='submit'>
-</div>
-
-<div class ='cardContainer'></div>
-
-
-
-
-
-
-        </div>
-
-
-
-
-        <script src="app.js" async defer></script>
-    </body>
+</body>
+<script src="app.js"></script>
 </html>
