@@ -7,11 +7,12 @@ const content = document.querySelector('.content')
 
 let myLibrary = [];
 
-function Book(title,pages,author,read) {
+class Book {
+  constructor(title,pages,author,read) {
   this.title = title;
   this.pages = pages;
   this.author = author;
-  this.read = read;
+  this.read = read;}
 }
 
 function addBookToLibrary(title,pages,author,read) {
