@@ -77,8 +77,35 @@ for(let i = 0; i < myLibrary.length; i++){
     deleteButton.addEventListener('click', event =>{
       let cardDelete = event.target.parentElement;
       let data = cardDelete.getAttribute('cardnu')
+  
       myLibrary.pop(parseInt(data))
       content.removeChild(cardDelete)
     })  
   }
+}
+
+// Javascript form validation project learning
+const form = document.querySelector("form");
+const formTitle = document.getElementById("title");
+const span = document.querySelector('.error')
+console.log(span)
+
+formTitle.addEventListener("input", (event) => {
+
+  if (formTitle.validity.valid) {
+
+    span.textContent = ""; // Reset the content of the message
+    span.className = "error"; // Reset the visual state of the message
+  } else {
+    showError();
+  }
+});
+
+
+function showError() {
+  if (formTitle.validity.valueMissing) {
+    span.textContent = "Please enter the name of the book";}
+
+  // Set the styling appropriately
+  emailError.className = "error active";
 }

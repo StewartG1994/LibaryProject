@@ -99,3 +99,33 @@ form{
     gap: 30px;
 
 }
+
+input{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+input:invalid {
+    border-color: #900;
+  }
+  
+  input:focus:invalid {
+    outline: none;
+  }
+
+  .error {
+    width: 100%;
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+  
+    box-sizing: border-box;
+  }
+  
+  .span{
+    background-color: #CFD1CB;
+  }

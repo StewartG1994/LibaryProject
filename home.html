@@ -12,8 +12,14 @@
 </head>
 <body>
     <div class="header">
-        <form action="">
-        <input type="text" id ='title' placeholder="title" required>
+        <form novalidate action="">
+        
+
+        <label for="title">
+        <input type="text" id ='title' name = 'title' placeholder="title" required>
+        <span class="error" aria-live="polite"></span>
+    </label>
+
         <input type="number" id='pages' placeholder="pages" required>
         <input type="text" id='author'placeholder="author" required>
         <input type="text" id='read' placeholder="read" required>
